@@ -16,9 +16,9 @@ const BasketItem = ({ name, options, qty, price }) => {
 
 
 const BasketButtons = ({ canCheckout, canClearBasket}) => {
-    return (<div class="card-body">
-                <button type="button" class="btn btn-primary btn-block" disabled={ canCheckout }>Go To Checkout</button>
-                { canClearBasket && (<><hr /><button type="button" class="btn btn-sm btn-block btn-outline-warning">Empty Basket</button></>) }
+    return (<div className="card-body">
+                <button type="button" className="btn btn-primary btn-block" disabled={ canCheckout }>Go To Checkout</button>
+                { canClearBasket && (<><hr /><button type="button" className="btn btn-sm btn-block btn-outline-warning">Empty Basket</button></>) }
             </div>);
 }
 
@@ -35,7 +35,7 @@ const Basket = ({ basket }) => {
                     { !hasItems && (<p className="text-center">No items in your basket</p>) }
                 </div>
                 { hasItems && (
-                    <ul class="list-group list-group-flush">
+                    <ul className="list-group list-group-flush">
                         <li className="list-group-item">Sub Total: { showPrice(subTotal) }</li>
                         <li className="list-group-item">Service: { showPrice(service) }</li>
                         <li className="list-group-item">Delivery: { showPrice(delivery) }</li>
