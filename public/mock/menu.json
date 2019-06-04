@@ -1,30 +1,30 @@
 [
     { "name": "Starters",
       "items" : [
-          { "name" : "Prawn Cocktail", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["Small", "Medium", "Large"]},
-          { "name" : "Bread Selection", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["1 Person", "2 Person"]},
-          { "name" : "Cheese Board", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": []}
+          { "name" : "Prawn Cocktail", "img" : "", "price" : "4.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": { "Size" :  ["Small", "Medium", "Large"] }},
+          { "name" : "Bread Selection", "img" : "", "price" : "2.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": { "Selection" : ["Artisan", "Stone Baked"], "Serving" : ["1 Person", "2 Person"] } },
+          { "name" : "Cheese Board", "img" : "", "price" : "5.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": []}
       ]
     },
     { "name": "Mains",
       "items" : [
-          { "name" : "Steak", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["Rare", "Medium", "Well Done"]},
-          { "name" : "Rack of Ribs", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["1 Person", "2 Person"]},
-          { "name" : "Fish", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": []}
+          { "name" : "Steak", "img" : "", "price" : "14.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options":  { "Size" :  ["Rare", "Medium", "Well Done"] } },
+          { "name" : "Rack of Ribs", "img" : "", "price" : "11.99","description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options":  { "Serving" :  ["1 Person", "2 Person"]} },
+          { "name" : "Fish", "img" : "", "price" : "9.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": {}}
       ]
     },
     { "name": "Sides",
       "items" : [
-          { "name" : "Chips", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["Thin Cut", "Wedges", "Sweet Potatoe"]},
-          { "name" : "Mash", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["1 Scoop", "2 Scoops"]},
-          { "name" : "Sweetcorn", "img" : "", "description" : "", "options": ["1 Piece", "2 Pieces", "3 Pieces"]}
+          { "name" : "Chips", "img" : "", "price" : "3.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options":  { "Chip Style" :   ["Thin Cut", "Wedges", "Sweet Potatoe"], "Sauce" : ["BBQ", "Ketchup", "Mustard"] }},
+          { "name" : "Mash", "img" : "", "price" : "3.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options":  { "Scoops" :   ["1 Scoop", "2 Scoops"] }},
+          { "name" : "Sweetcorn", "img" : "", "price" : "3.99", "description" : "", "options": ["1 Piece", "2 Pieces", "3 Pieces"]}
       ]
     },
     { "name": "Desserts",
       "items" : [
-          { "name" : "Ice Cream", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["Vanilla", "Chocolate", "Strawberry"]},
-          { "name" : "Brownie", "img" : "", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "options": []},
-          { "name" : "Pancake", "img" : "", "description" : "Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["Nutella", "Forrest Fruits", "Ice Cream", "Bacon and Maple Syrup"]}
+          { "name" : "Ice Cream", "img" : "", "price" : "3.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["Vanilla", "Chocolate", "Strawberry"]},
+          { "name" : "Brownie", "img" : "", "price" : "4.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "options": []},
+          { "name" : "Pancake", "img" : "", "price" : "2.99", "description" : "Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": ["Nutella", "Forrest Fruits", "Ice Cream", "Bacon and Maple Syrup"]}
       ]
     }
 ]
