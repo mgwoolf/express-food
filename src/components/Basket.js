@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const BasketItem => ({ name, options, qty, price }) => {
+import { showPrice } from './../helpers/pricing';
+
+const BasketItem = ({ name, options, qty, price }) => {
     return (<div>
                 <div>{ qty }</div>
                 <div>
@@ -9,29 +12,46 @@ const BasketItem => ({ name, options, qty, price }) => {
                 </div>
                 <div>{ price }</div>
             </div>);
+};
+
+
+const BasketButtons = ({ canCheckout, canClearBasket}) => {
+    return (<div class="card-body">
+                <button type="button" class="btn btn-primary btn-block" disabled={ canCheckout }>Go To Checkout</button>
+                { canClearBasket && (<><hr /><button type="button" class="btn btn-sm btn-block btn-outline-warning">Empty Basket</button></>) }
+            </div>);
 }
 
 
-class Basket extends React.component {
+const Basket = ({ basket }) => {
 
-    constructor(props) {
-        super(props)
-        this.state({
-            items: [],
-            canCheckout: false;
-        })
-    }
+    const { items, subTotal, delivery, service, total, canCheckout, canClearBasket } = basket,
+          hasItems = items.length > 0;
+
+    return (<div className="card mt-3">
+                <div className="card-header">Basket</div>
+                <div className="card-body">
+                    { hasItems && items.map((item, idx)=>(<BasketItem key={ idx } {...item} />)) }
+                    { !hasItems && (<p className="text-center">No items in your basket</p>) }
+                </div>
+                { hasItems && (
+                    <ul class="list-group list-group-flush">
+                        <li className="list-group-item">Sub Total: { showPrice(subTotal) }</li>
+                        <li className="list-group-item">Service: { showPrice(service) }</li>
+                        <li className="list-group-item">Delivery: { showPrice(delivery) }</li>
+                        <li className="list-group-item">Total: { showPrice(total) }</li>
+                    </ul>
+                ) }
+                <BasketButtons canCheckout={ canCheckout } canClearBasket={ canClearBasket } />
+            </div>);
+};
 
 
-    render() {
-
-        const { items, canCheckout } = this.state,
-              hasItems = items.length>0 ? true : false;
-
-        return (<div>
-                    { hasItems && items.map((item, idx)=>(<BasketItem key={ idx } {...item} />) }
-                    { !hasItems && (<p>No items in your basket</p>) }
-                </div>);
-
-    }
+function mapStateToBasket(state) {
+    console.log(state);
+    return {
+        basket: state.basket
+    };
 }
+
+export default connect(mapStateToBasket)(Basket);
