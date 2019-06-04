@@ -1,0 +1,21 @@
+.MenuSelection {
+    img {
+        margin: -20px;
+    }
+
+    span {
+        margin-bottom: 10px;
+    }
+
+    &-options {
+        padding-bottom: 20px;
+    }
+
+    &-buttonBar {
+        text-align: center;
+    }
+
+    .btn-primary {
+        margin-bottom: 20px;
+    }
+}
