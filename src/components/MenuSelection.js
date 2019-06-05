@@ -1,7 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { addToBasket } from './../actions/basket';
 
 import OverlayHolder from './OverlayHolder'
 import { MenuPriceTag } from './MenuItem';
+
 
 import "./MenuSelection.scss";
 
@@ -11,7 +15,7 @@ const MenuOptionGroup = ({ optionGroup, addItemAction }) => {
           isSingle = type==="single";
     
     return (<div>
-                <h3>{ title }</h3>
+                <h4>{ title }</h4>
                 { options.map((option, idx)=>{
                     return (<div key={idx} className="form-group form-check">
                                 <label className="form-check-label">
@@ -28,7 +32,8 @@ class MenuSelection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedOptions: {}
+            selectedOptions: {},
+            qty: 1,
         };
     }
 
@@ -43,7 +48,15 @@ class MenuSelection extends React.Component {
         });
     }
 
+    _setQty = e => {
+        this.setState({
+            qty: e.target.value
+        });
+    }
+
     _addToOder = e => {
+        const { selectedOptions, qty } = this.state;
+        this.props.addToBasket(this.props, selectedOptions, qty);
         this.props.closeAction();
     }
 
@@ -52,16 +65,20 @@ class MenuSelection extends React.Component {
     }
 
     render() {
-        const { selectedOptions } = this.state,
-              { name, price, options, description } = this.props;
-
-        console.log(selectedOptions);
-    
+        const { name, price, options, description } = this.props,
+              qtyOptions = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        
         return (<OverlayHolder>
                     <div className="MenuSelection">
                         <h2>{ name }</h2>
                         <MenuPriceTag price={ price } />
                         <p>{ description }</p>
+                        <div className="MenuSelection-qty">
+                            <h4>Quantity</h4>
+                            <select className="form-control" onChange={ this._setQty } >
+                                { qtyOptions.map((val, idx)=>(<option key={idx} value={val}>{ val }</option>))}
+                            </select>
+                        </div>
                         <div className="MenuSelection-options">
                             { options.map((optionGroup, idx)=>(<MenuOptionGroup key={idx} optionGroup={ optionGroup } addItemAction={ this._addSelectedOption } />)) }
                         </div>
@@ -74,4 +91,6 @@ class MenuSelection extends React.Component {
     } 
 }
 
-export default MenuSelection;
+const mapStateToProps = (state,props) => ({});
+
+export default connect(mapStateToProps, {addToBasket})(MenuSelection);

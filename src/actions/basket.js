@@ -1,20 +1,9 @@
-export const addToBasket = (dispatch) => () => {
-    return {
-        action: 'CLEAR_BASKET',
-        payload: {},
-    }
-}
+const ADD_TO_BASKET = 'ADD_TO_BASKET',
+      CLEAR_BASKET = 'CLEAR_BASKET';
 
-export const addToBasket = (dispatch) => () => {
+export const addToBasket = (item, options, qty) => {
     return {
-        action: 'CLEAR_BASKET',
-        payload: {},
-    }
-}
-
-export const clearBasket = (dispatch) => () => {
-    return {
-        action: 'CLEAR_BASKET',
-        payload: {},
-    }
+        type: ADD_TO_BASKET,
+        payload: { item: item, options: options, qty: qty },
+    };
 }

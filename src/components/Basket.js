@@ -3,25 +3,27 @@ import { connect } from 'react-redux';
 
 import { showPrice } from './../helpers/pricing';
 
+import "./Basket.scss";
+
 const BasketItem = ({ name, options, qty, price }) => {
-    return (<div>
-                <div>{ qty }</div>
+    return (<div className="Basket-items">
                 <div>
-                    { name }
-                    { options }
+                    { qty } x { name }
+                    <div>{ Object.keys(options).map((key, idx)=>{
+                        return (<small key={idx}><strong>{ key }</strong> { options[key] } </small>)
+                    }) }</div>
                 </div>
-                <div>{ price }</div>
+                <div>{ showPrice(price) }</div>
             </div>);
 };
 
 
 const BasketButtons = ({ canCheckout, canClearBasket}) => {
     return (<div className="card-body">
-                <button type="button" className="btn btn-primary btn-block" disabled={ canCheckout }>Go To Checkout</button>
+                <button type="button" className="btn btn-primary btn-block" disabled={ !canCheckout }>Go To Checkout</button>
                 { canClearBasket && (<><hr /><button type="button" className="btn btn-sm btn-block btn-outline-warning">Empty Basket</button></>) }
             </div>);
 }
-
 
 const Basket = ({ basket }) => {
 

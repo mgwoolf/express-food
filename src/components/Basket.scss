@@ -1,0 +1,9 @@
+.Basket {
+    &-items {
+        display: flex;
+        border-bottom: 1px dotted #ccc;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+}

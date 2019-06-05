@@ -11,12 +11,12 @@ const initialState = {
 const calculateBasketTotal = (state) => {
     const  delivery = 4.99,
            service = 2.99,
-           totalItems = state.items;
+           totalItems = state.items.length;
 
-    let subTotal, total = 0;
+    let subTotal = 0;
 
-    state.items.foreach((item) => {
-        subTotal += item.price;
+    state.items.forEach((item) => {
+        subTotal += (Math.round(Number(item.price) * 100) / 100) * item.qty;
     });
 
     return {...state, delivery: delivery,
@@ -24,18 +24,19 @@ const calculateBasketTotal = (state) => {
                       subTotal: subTotal,
                       canCheckout: totalItems>0,
                       canClearBasket: totalItems>0,
-                      total: total };
+                      total: (subTotal + delivery + service) };
 }
+
 
 const basket = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_ITEM':
-            const items = state.items.push(action.payload);
+        case 'ADD_TO_BASKET':
+            const { item, options, qty } = action.payload,
+                  items = state.items;
+            items.push({ ...item, options: options, qty: qty });
             return calculateBasketTotal({...state, items:items });
-        case 'REMOVE_ITEM':
-            return { ...state, items: state.items.push(action.payload) }
-        case 'UPDATE_QTY':
-            return { ...state, items: state.items.push(action.payload) }
+        case 'CLEAR_BASKET':
+            return calculateBasketTotal({...state, items:[] });
         default:
             return state
     }

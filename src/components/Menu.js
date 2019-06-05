@@ -11,7 +11,6 @@ const MenuSection = ({ name, items }) => {
             <h3 className="my-3">{ name }</h3>
             <div className="row">
                 { items.map((item, idx)=>{
-                    console.log(item);
                     return (<div key={ idx } className="col-sm"><MenuItem {...item} /></div>)
                 }) }
             </div>
