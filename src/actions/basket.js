@@ -1,5 +1,4 @@
-const ADD_TO_BASKET = 'ADD_TO_BASKET',
-      CLEAR_BASKET = 'CLEAR_BASKET';
+const ADD_TO_BASKET = 'ADD_TO_BASKET';
 
 export const addToBasket = (item, options, qty) => {
     return {
