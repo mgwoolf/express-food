@@ -10,7 +10,7 @@
       "items" : [
           { "name" : "Steak", "img" : "", "price" : "14.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": [{ "title": "Size", "type": "single",  "options" :  ["Rare", "Medium", "Well Done"] } ] },
           { "name" : "Rack of Ribs", "img" : "", "price" : "11.99","description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": [{ "title": "Serving", "type": "single",  "options" :  ["1 Person", "2 Person"] } ] },
-          { "name" : "Fish", "img" : "", "price" : "9.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": {}}
+          { "name" : "Fish", "img" : "", "price" : "9.99", "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin euismod velit, vel accumsan est posuere in. Integer sit amet justo enim. ", "options": []}
       ]
     },
     { "name": "Sides",
