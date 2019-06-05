@@ -1,12 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import reducers from './reducers';
+
+import store from './store';
 
 import Basket from './components/Basket';
 import Restaurant from './components/Restaurant';
-
-const store = createStore(reducers)
 
 const App = () => (<Provider store={ store }>
                         <div className="container">
